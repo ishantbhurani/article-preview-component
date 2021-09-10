@@ -148,7 +148,7 @@ button {
 .share-btn:hover,
 .share-btn:focus,
 .share-btn.active {
-  background-color: var(--color-very-dark-grayish-blue);
+  background-color: var(--color-desaturated-dark-blue);
 }
 
 .share-btn:hover img,
