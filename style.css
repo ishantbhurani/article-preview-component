@@ -50,3 +50,83 @@ button {
   outline: transparent;
   border: transparent;
 }
+
+.card {
+  width: 100%;
+  max-width: 54.5em;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 3em 2em -0.5em hsl(217, 19%, 90%);
+  border-radius: 0.875em;
+  overflow: hidden;
+}
+
+.card-header {
+  flex: 0.8;
+}
+
+.card-img-wrapper {
+  height: 100%;
+}
+
+.card-img-wrapper img {
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.card-content {
+  flex: 1;
+  padding: 2.5em 3em;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: var(--color-very-dark-grayish-blue);
+}
+
+.card-desc {
+  margin: 0.8em 0 1.5em;
+  color: var(--color-desaturated-dark-blue);
+  line-height: 1.7;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.3em;
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.user-img-wrapper {
+  width: 2.9em;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 1em;
+  color: var(--color-very-dark-grayish-blue);
+}
+
+.date {
+  font-size: 0.95em;
+  color: var(--color-grayish-blue);
+  margin-top: 0.2em;
+}
+
+.share-btn {
+  padding: 0.6em;
+  border-radius: 50%;
+  background-color: var(--color-light-grayish-blue);
+}
+
+.share-overlay {
+  display: none;
+}
