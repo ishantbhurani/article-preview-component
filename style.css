@@ -17,6 +17,11 @@
   --color-grayish-blue: hsl(212, 23%, 69%);
   --color-light-grayish-blue: hsl(210, 46%, 95%);
   --color-white: hsl(0, 0%, 100%);
+
+  /* Transitions */
+  --transition-200ms: all 0.2s ease-in-out;
+  --transition-200ms-linear: all 0.2s linear;
+  --transition-300ms: all 0.3s ease-in-out;
 }
 
 body {
@@ -50,6 +55,10 @@ button {
   outline: transparent;
   border: transparent;
   cursor: pointer;
+}
+
+.card-container {
+  position: relative;
 }
 
 .card {
@@ -126,8 +135,74 @@ button {
   padding: 0.6em;
   border-radius: 50%;
   background-color: var(--color-light-grayish-blue);
+  transition: var(--transition-300ms);
+}
+
+.share-btn img {
+  transition: var(--transition-200ms);
+}
+
+.share-btn:hover,
+.share-btn:focus,
+.share-btn.active {
+  background-color: var(--color-very-dark-grayish-blue);
+}
+
+.share-btn:hover img,
+.share-btn:focus img,
+.share-btn.active img {
+  filter: saturate(100%) brightness(0) invert(99%) sepia(0%) saturate(0%)
+    hue-rotate(259deg) brightness(105%) contrast(100%);
 }
 
 .share-overlay {
+  position: absolute;
+  top: 46.5%;
+  right: -5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 1.2em 3em;
+  background-color: var(--color-very-dark-grayish-blue);
+  border-radius: 0.875em;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 1em 1em -0.5em hsl(217, 19%, 90%);
+  transition: var(--transition-200ms-linear);
+}
+
+.share-overlay::before {
+  content: "";
+  width: 1.2em;
+  height: 1.2em;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: inherit;
+  box-shadow: 0.8em 0.8em 0.8em -0.2em hsl(217, 19%, 90%);
+}
+
+.share-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.share-text {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--color-grayish-blue);
+}
+
+.social-icons-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.overlay-share-btn {
   display: none;
 }
