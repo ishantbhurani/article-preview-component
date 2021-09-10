@@ -227,13 +227,44 @@ button {
   }
 
   .share-overlay {
+    inset: 0;
+    top: unset;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    justify-content: flex-start;
+    padding: 1.5em 2.5em;
+    gap: 1.3em;
+  }
+
+  .share-overlay::before {
     display: none;
+  }
+
+  .social-icons-list {
+    flex-grow: 1;
+    gap: 1.3em;
+  }
+
+  .share-overlay.active .overlay-share-btn {
+    display: block;
+  }
+
+  .overlay-share-btn {
+    display: none;
+    padding: 0.6em;
+    border-radius: 50%;
+    background-color: var(--color-desaturated-dark-blue);
+  }
+
+  .overlay-share-btn img {
+    filter: saturate(100%) brightness(0) invert(99%) sepia(0%) saturate(0%)
+      hue-rotate(259deg) brightness(105%) contrast(100%);
   }
 }
 
 @media screen and (max-width: 420px) {
   .card-content {
-    padding: 2.8em 2.5em 1.5em;
+    padding: 2.8em 2.5em 1.1em;
   }
 
   .card-title {
