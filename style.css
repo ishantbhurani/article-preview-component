@@ -90,6 +90,8 @@ button {
 .card-content {
   flex: 1;
   padding: 2.5em 3em;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-title {
@@ -101,6 +103,7 @@ button {
   margin: 0.8em 0 1.5em;
   color: var(--color-desaturated-dark-blue);
   line-height: 1.7;
+  flex-grow: 1;
 }
 
 .user {
@@ -205,4 +208,39 @@ button {
 
 .overlay-share-btn {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 30em;
+    min-height: 38.5em;
+    flex-direction: column;
+  }
+
+  .card-header {
+    flex: unset;
+    height: 15em;
+  }
+
+  .card-img-wrapper img {
+    object-position: 50% 30%;
+  }
+
+  .share-overlay {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .card-content {
+    padding: 2.8em 2.5em 1.5em;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-desc {
+    margin-bottom: 2em;
+  }
 }
