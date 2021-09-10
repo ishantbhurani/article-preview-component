@@ -49,6 +49,7 @@ button {
   color: inherit;
   outline: transparent;
   border: transparent;
+  cursor: pointer;
 }
 
 .card {
